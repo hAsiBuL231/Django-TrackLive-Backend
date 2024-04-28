@@ -35,12 +35,10 @@ router.register(r'groups', GroupViewSet)
 
 router.register(r'users', UserViewSet) 
 router.register(r'locations', LocationViewSet)
-from locations.consumers import LocationConsumer
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('authentication.urls')),
-    path('ws/location/', LocationConsumer.as_asgi()),
 
     path('', include(router.urls)),  # Include the router's URL patterns for the notes app
 

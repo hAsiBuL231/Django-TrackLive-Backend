@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class LocationModel(models.Model):
-    securityCode = models.CharField(primary_key=True, editable=False, max_length=500, unique=True)
+    securityCode = models.CharField(primary_key=True, editable=False, max_length=255, unique=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     taker = models.CharField(max_length=128)

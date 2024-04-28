@@ -13,7 +13,7 @@ class CustomUUIDField(models.UUIDField):
 
 class UserModel(models.Model):
     # user_id = models.AutoField(primary_key=True)
-    securityCode = models.CharField(primary_key=True, editable=False, max_length=500, unique=True)
+    securityCode = models.CharField(primary_key=True, editable=False, max_length=255, unique=True)
     # securityCode = CustomUUIDField(primary_key=True, editable=False)
     email = models.CharField(max_length=50)
     name = models.CharField(max_length=50)
