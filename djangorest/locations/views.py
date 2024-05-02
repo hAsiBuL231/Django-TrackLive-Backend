@@ -28,14 +28,14 @@ class LocationViewSet(viewsets.ModelViewSet):
         self.perform_create(serializer)
 
         # Send data to WebSocket Consumer
-        channel_layer = get_channel_layer()
-        async_to_sync(channel_layer.group_send)(
-            "location_group",
-            {
-                "type": "location.message",
-                "text": json.dumps(serializer.data)
-            }
-        )
+        # channel_layer = get_channel_layer()
+        # async_to_sync(channel_layer.group_send)(
+        #     "location_group",
+        #     {
+        #         "type": "location.message",
+        #         "text": json.dumps(serializer.data)
+        #     }
+        # )
         
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)

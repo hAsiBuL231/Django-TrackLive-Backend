@@ -19,8 +19,8 @@ class UserModel(models.Model):
     name = models.CharField(max_length=50)
     phone = models.IntegerField()
     imageUrl = models.CharField(max_length=500)
-    latitude = models.FloatField()
-    longitude = models.FloatField()
+    # latitude = models.FloatField()
+    # longitude = models.FloatField() 
 
     def __str__(self):
         return self.name  # + ' -- ' + str(self.securityCode)

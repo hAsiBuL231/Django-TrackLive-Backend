@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'api',
     'authentication',
     'locations',
+    'Test',
     "rest_framework",
     "rest_framework.authtoken",
     "channels",
@@ -74,6 +75,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'djangorest.wsgi.application'
+ASGI_APPLICATION = 'djangorest.asgi.application' 
 
 
 # Database
