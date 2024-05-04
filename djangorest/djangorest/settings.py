@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wk%uf!=gu6g4^+=ud%w5*oavqvn4jqm$1z_tl8j7dzw&_y(gu0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['10.0.2.2', '127.0.0.1', '*', '192.168.1.100']
 
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'authentication',
     'locations',
     'Test',
+    'images',
     "rest_framework",
     "rest_framework.authtoken",
     "channels",
@@ -151,3 +152,10 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
 }
+
+
+# Setup for server image
+import os
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
