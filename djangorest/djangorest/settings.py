@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-wk%uf!=gu6g4^+=ud%w5*oavqvn4jqm$1z_tl8j7dzw&_y(gu0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['10.0.2.2', '127.0.0.1', '*', '192.168.1.100']
+ALLOWED_HOSTS = ['10.0.2.2', '127.0.0.1', '*']
 
 
 # Application definition
@@ -40,11 +40,12 @@ INSTALLED_APPS = [
     'api',
     'authentication',
     'locations',
-    'Test',
+    # 'Test',
     'images',
     "rest_framework",
     "rest_framework.authtoken",
     "channels",
+    "sos_history",
 ]
 
 MIDDLEWARE = [
@@ -162,3 +163,30 @@ import os
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# LOGGING_CONFIG = None
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        # "console": {
+        #     "class": "logging.FileHandler",
+        #     "level": "DEBUG",
+        # },
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'D:/TrackLive Backend Django/djangorest/debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            # "handlers": ["console", "file"],
+            "handlers": ["file"],
+            "level": "INFO",
+            'propagate': True,
+        },
+    },
+}

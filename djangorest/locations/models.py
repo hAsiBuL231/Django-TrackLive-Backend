@@ -1,4 +1,5 @@
 from django.db import models
+from simple_history.models import HistoricalRecords
 
 # Create your models here.
 class LocationModel(models.Model):
@@ -9,6 +10,8 @@ class LocationModel(models.Model):
     message = models.TextField(max_length=1024)
     latitude = models.FloatField()
     longitude = models.FloatField()
+    history = HistoricalRecords()
+
     def __str__(self): 
         return self.taker 
 

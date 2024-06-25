@@ -25,6 +25,7 @@ from api.views import UserViewSet, GroupViewSet
 from authentication.View_login import LoginView
 from authentication.View_register import RegistrationView
 from locations.views import LocationViewSet
+from sos_history.views import SOSHistoryViewSet
 
 router = routers.DefaultRouter()
 # router.register(r'register', RegistrationView.as_view()) 
@@ -35,11 +36,12 @@ router.register(r'groups', GroupViewSet)
 
 router.register(r'users', UserViewSet) 
 router.register(r'locations', LocationViewSet)
+router.register(r'soshistory', SOSHistoryViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('authentication.urls')),
-    path('test/', include('Test.urls')),
+    # path('test/', include('Test.urls')),
     path('image/', include('images.urls')),
 
     path('', include(router.urls)),  # Include the router's URL patterns for the notes app
