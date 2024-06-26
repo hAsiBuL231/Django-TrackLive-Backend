@@ -4,7 +4,7 @@ python3 -m venv env
 env\Scripts\activate
 
 deactivate
-###############################################
+###############################################   woprk in venv ##############
 
 pip install djangorestframework
 
